@@ -6,5 +6,4 @@ RUN npm install -g live-server
 WORKDIR /www
 VOLUME /www
 
-EXPOSE 8080
 CMD live-server
