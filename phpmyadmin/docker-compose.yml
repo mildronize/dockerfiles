@@ -1,0 +1,21 @@
+version: '2'
+services:
+  phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      container_name: phpmyadmin
+      environment:
+        - PMA_ARBITRARY=1
+        - PMA_HOST=db
+      restart: always
+      ports:
+        - 8080:80
+      volumes:
+        - /sessions
+      depends_on:
+        - db
+  db:
+    image: mariadb
+    volumes:
+      - /home/mildronize/gits/dockerfiles/phpmyadmin/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: your_password
