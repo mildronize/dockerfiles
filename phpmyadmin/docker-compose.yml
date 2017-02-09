@@ -16,6 +16,9 @@ services:
   db:
     image: mariadb
     volumes:
-      - /home/mildronize/gits/dockerfiles/phpmyadmin/data:/var/lib/mysql
+      - mariadb_volume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: your_password
+
+volumes:
+  mariadb_volume:
