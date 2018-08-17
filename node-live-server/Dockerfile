@@ -1,4 +1,4 @@
-FROM node:argon
+FROM node:8-alpine
 MAINTAINER Thada Wangthammang <mildronize@gmail.com>
 
 RUN npm install -g live-server
